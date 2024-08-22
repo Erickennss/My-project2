@@ -1,10 +1,11 @@
-// eslint.config.js
+// eslint.config.cjs
+"use strict";
 
-import typescriptParser from "@typescript-eslint/parser";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-import js from "@eslint/js";
+const typescriptParser = require("@typescript-eslint/parser");
+const typescriptPlugin = require("@typescript-eslint/eslint-plugin");
+const js = require("@eslint/js");
 
-export default [
+module.exports = [
   {
     root: true,
     languageOptions: {
