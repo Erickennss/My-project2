@@ -7,7 +7,6 @@ const js = require("@eslint/js");
 
 module.exports = [
   {
-    root: true,
     languageOptions: {
       parser: typescriptParser,
     },
