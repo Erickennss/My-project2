@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/main.ts", "../../src/browser.ts"],
+  "sourcesContent": ["export function greet(person: string) {\r\n  return \"Hello \" + person;\r\n}\r\n\r\nconsole.log(greet(\"TypeScript\"));\r\n", "// Import a function\r\nimport { greet } from \"./main\";\r\n\r\n// Make it accessible on the window object\r\n(window as any).greet = greet;\r\n"],
+  "mappings": "mBAAO,SAASA,EAAMC,EAAgB,CACpC,MAAO,SAAWA,CACpB,CAEA,QAAQ,IAAID,EAAM,YAAY,CAAC,ECA9B,OAAe,MAAQE",
+  "names": ["greet", "person", "greet"]
+}
