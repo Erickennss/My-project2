@@ -2,8 +2,6 @@
 
 ## 2021 年使用现代工具启动 TypeScript 项目的指南。
 
-=======
-
 - （可选）esbuild 以捆绑用于浏览器（和 Node.js）
 - 使用 typescript-eslint 进行 linting（tslint 已弃用）
 - 使用 Jest （和 ts-jest ）进行测试)
