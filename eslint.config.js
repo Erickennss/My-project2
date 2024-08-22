@@ -1,19 +1,18 @@
-import typescriptPlugin from "eslint-plugin-typescript-eslint";
-module.exports = {
-  languageOptions: {
-    parser: "@typescript-eslint/parser",
-    ecmaVersion: 2022,
-    sourceType: "module",
+// eslint.config.js
+
+import typescriptParser from "@typescript-eslint/parser";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import js from "@eslint/js";
+
+export default [
+  {
+    root: true,
+    languageOptions: {
+      parser: typescriptParser,
+    },
+    plugins: {
+      "@typescript-eslint": typescriptPlugin,
+    },
+    extends: [js.configs.recommended, "plugin:@typescript-eslint/recommended"],
   },
-  plugins: {
-    "@typescript-eslint": typescriptPlugin,
-  },
-  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  env: {
-    node: true,
-    es6: true,
-  },
-  rules: {
-    // Add any custom rules here
-  },
-};
+];
