@@ -6,12 +6,19 @@ const js = require("@eslint/js");
 
 // 提取 @eslint/js 的 recommended 配置中的规则和环境等
 const eslintJsRecommendedRules = js.configs.recommended.rules || {};
-const eslintJsRecommendedEnv = js.configs.recommended.env || {};
+// 这里不再需要提取 env，因为要转换方式
 
 module.exports = [
   {
     languageOptions: {
       parser: typescriptParser,
+      // 假设原来在 env 中定义的全局变量
+      globals: {
+        // 例如在 node 环境下可能有的全局变量
+        process: "readonly",
+        // 在 browser 环境下可能有的全局变量
+        window: "readonly",
+      },
     },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
@@ -21,12 +28,6 @@ module.exports = [
       ...eslintJsRecommendedRules,
       // 可以添加或覆盖一些你自己的通用规则，如果需要的话
       "no-console": "off",
-    },
-    env: {
-      // 将 @eslint/js recommended 的环境配置合并进来
-      ...eslintJsRecommendedEnv,
-      // 可以添加或覆盖一些你自己的环境配置，如果需要的话
-      browser: true,
     },
     // 提取 @typescript-eslint/recommended 的规则并合并进来
     ...(typescriptPlugin.configs.recommended.rules || {}),
