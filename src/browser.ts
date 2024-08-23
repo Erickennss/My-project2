@@ -1,4 +1,5 @@
 // Import a function
+import { greet } from "./main";
 // (window as any).greet = greet;
 // Make it accessible on the window object
 
@@ -7,11 +8,5 @@ declare global {
     greet: typeof greet;
   }
 }
-// In your browser.ts file
-import { greet } from "./main";
+// In browser.ts file
 window.greet = greet;
-// try {
-//   (window as unknown as { greet: typeof greet }).greet = greet;
-// } catch (error) {
-//   console.error("Error loading or assigning greet function:", error);
-// }
